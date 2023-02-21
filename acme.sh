@@ -7951,6 +7951,10 @@ _process() {
       _saveaccountconf "LOG_LEVEL" "$_log_level"
     fi
 
+    if [ "$_server" ]; then
+      setdefaultca
+    fi
+
     if [ "$_syslog" ]; then
       if _exists logger; then
         if [ "$_syslog" = "0" ]; then
